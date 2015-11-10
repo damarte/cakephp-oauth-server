@@ -561,7 +561,7 @@ class OAuthComponent extends Component implements IOAuth2Storage, IOAuth2Refresh
 			'recursive' => -1
 		));
 		if ($user) {
-			return array('user_id' => $user['User'][$this->User->primaryKey]);
+			return array('user_id' => $user[$this->authenticate['userModel']][$this->User->primaryKey]);
 		}
 		return false;
 	}
